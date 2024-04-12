@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прямоугольники</title>
+    <script>
+        function checkRectangles() {
+            var a = parseFloat(prompt("Введите сторону a первого прямоугольника:"));
+            var b = parseFloat(prompt("Введите сторону b первого прямоугольника:"));
+            var c = parseFloat(prompt("Введите сторону c второго прямоугольника:"));
+            var d = parseFloat(prompt("Введите сторону d второго прямоугольника:"));
+
+            // Проверяем, помещается ли прямоугольник параллельно
+            var parallelFit = (a <= c && b <= d) || (b <= c && a <= d);
+
+            // Проверяем, помещается ли прямоугольник перпендикулярно
+            var perpendicularFit = (a <= d && b <= c) || (b <= d && a <= c);
+
+            // Отображаем результат
+            if (parallelFit || perpendicularFit) {
+                alert("Прямоугольник можно поместить внутрь другого.");
+            } else {
+                alert("Прямоугольник нельзя поместить внутрь другого.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="checkRectangles()">Проверить прямоугольники</button>
+</body>
+</html>

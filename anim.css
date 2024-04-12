@@ -1,0 +1,135 @@
+.header { /* верхняя часть страница */
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+body { /* общие для всего файла стили */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Используем более красочный шрифт */
+    font-size: 18px;
+    background-color: #ffffff;
+    overflow: hidden;
+    color: #333;
+}
+.logo-link { /* логотип-ссылка */
+    display: inline-block; 
+}
+.logo { /* фото логотипа */
+    background: url('img/u0.png') center/cover no-repeat;
+    width: 80px;
+    height: 80px;
+}
+.menu { /* меню в верхней части страницы */
+    display: flex;
+    margin-left: 50px;
+}
+.menu-item { /* элементы меню */
+    margin-right: 50px;
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+}
+.menu-item:hover::after { /* появление желтой полосы под кнопками меню АНИМАЦИЯ */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(255, 228, 1, 1);
+    bottom: -5px;
+    left: 0;
+}
+.login-btn { /* кнопка входа */
+    background-color: rgba(255, 228, 1, 1);
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: auto;
+    cursor: pointer;
+    margin-right: auto;
+}
+.dropdown { /* кнопки с выпадающим меню */
+    margin-top: 10px;
+}
+
+.dropdown-content { /* содержимое выпадающего меню */
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.dropdown-content a { /* ссылки из выпадающего меню */
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover { /* стиль выпадающего меню при наведении */
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content { /* отображение выпадающего меню при наведении на него */
+    display: block;
+}
+.panel { /* основная часть страницы */
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 40px;
+}
+.square { /* квадрат ползет слева направо по экрану */
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    top: 91%;
+    left: 0;
+    animation: moveRight 10s linear infinite;
+  }
+  
+  @keyframes moveRight { /* АНИМАЦИЯ квадрата который ползет слева направо по экрану */
+    0% {
+      left: 0;
+    }
+    100% {
+      left: calc(100% - 50px);
+    }
+  }
+  .button { /* кнопка для вызова круга */
+    padding: 32px 5px;
+    background-color: #0059b8;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover { /* АНИМАЦИЯ смена цвета кнопки при наведении */
+    background-color: #b92929;
+  }
+  
+  .element { /* Желтый круг появляющийся после нажатия на кнопку */
+    width: 100px;
+    height: 100px;
+    margin-left: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: rgb(251, 255, 37);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  #toggle:checked ~ .element { /* АНИМАЦИЯ стиль элемента после нажатия переключателя */
+    opacity: 1;
+  }
+  

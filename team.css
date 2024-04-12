@@ -1,0 +1,137 @@
+.header {  /* верхняя часть страницы */
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+body {  /* стили для всего документа */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    background-color: #ffffff;
+    color: #333;
+}
+.logo-link {  /* кликабельный логотип */
+    display: inline-block; 
+}
+.logo {  /* логотип */
+    background: url('/img/u0.png') center/cover no-repeat;
+    width: 80px;
+    height: 80px;
+}
+.menu {  /* меню */
+    display: flex;
+    margin-left: 50px;
+}
+.menu-item {  /* элементы меню */
+    margin-right: 50px;
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+}
+.menu-item:hover::after {  /* АНИМАЦИЯ появление желтой линии под кнопками меню при наведении */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(255, 228, 1, 1);
+    bottom: -5px;
+    left: 0;
+}
+.login-btn {  /* кнопка входа в меню */
+    background-color: rgba(255, 228, 1, 1);
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: auto;
+    cursor: pointer;
+    margin-right: auto;
+}
+.container {  /* нижняя часть страницы */
+    max-width: 1200px;
+    margin: auto;
+}
+
+footer {  /* подвал */
+    background-color: rgba(255, 228, 1, 1);
+    padding: 20px;
+}
+
+.company-name {  /* стиль для названия компании */
+    font-size: 14px;
+    margin-bottom: -4px;
+}
+
+.footer-info {  /* подвал */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-info p {  /* элементы строковые в подвале */
+    margin: 4px 0;
+    flex-basis: 48%;
+}
+.dropdown { /* кнопки с выпадающим меню */
+    margin-top: 10px;
+}
+
+.dropdown-content { /* содержимое выпадающего меню */
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.dropdown-content a { /* ссылки из выпадающего меню */
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover { /* стиль выпадающего меню при наведении */
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content { /* отображение выпадающего меню при наведении на него */
+    display: block;
+}
+.panel {  /* оставшаяся часть страницы самая основная */
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 40px;
+}
+
+.profile {  /* стиль каждого профиля */
+    flex: 1;
+    text-align: center;
+}
+
+.profile img {  /* стиль фото профиля */
+    max-width: 240px;
+    border: 8px solid  rgba(255, 228, 1, 1);
+    height: auto;
+    border-radius: 50%;
+    display: block; 
+    margin: 0 auto;
+}
+
+
+.profile ul {  /* стиль списка профиля */
+    list-style: none;
+    padding: 0;
+}
+
+.profile li {  /* стиль элементов списка профиля */
+    margin-bottom: 5px;
+}
+

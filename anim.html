@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимации</title>
+    <link rel="stylesheet" href="anim.css">
+</head>
+<body>
+    <header class="header"> <!--Верхняя часть страницы-->
+        <a href="index.html" class="logo-link">
+            <div class="logo"></div>
+        </a>
+        <nav class="menu"> <!--меню страницы сверху-->
+            <a href="getmoney.html" class="menu-item">Получить деньги</a>
+            <a href="otdat.html" class="menu-item">Погасить кредит</a>
+            <a href="support.html" class="menu-item">Поддержка</a>
+            <div class="dropdown"> <!-- подменю-->
+                <a href="kontakt.html" class="menu-item">Контакты</a>
+                <div class="dropdown-content">
+                    <a href="num.html">Телефон</a>
+                    <a href="adres.html">Адрес</a>
+                    <a href="email.html">Электронная почта</a>
+                </div>
+            </div>
+            <div class="dropdown"><!--подменю-->
+                <a href="ol.html" class="menu-item">О нас</a>
+                <div class="dropdown-content">
+                    <a href="history.html">История</a>
+                    <a href="team.html">Команда</a>
+                    <a href="anim.html">Крутые анимации</a>
+                </div>
+            </div>
+        </nav>
+        <button class="login-btn">Вход</button>
+    </header>
+    <div class="panel"><!--основная часть страницы-->
+        <div class="square"></div>
+        <input type="checkbox" id="toggle">
+        <label for="toggle" class="button">Показать или потушить кружочек</label>
+        <div class="element"></div>
+    </div>
+        <svg width="100%" height="990">
+            <!-- Анимация движения круга -->
+            <circle cx="600" cy="100" r="20" fill="green">
+              <animateMotion dur="7s" repeatCount="indefinite">
+                <mpath xlink:href="#path"/>
+              </animateMotion>
+            </circle>
+            <path id="path" d="M 10,80 Q 95,10 180,80 T 350,80" fill="none"/>
+            
+            <!-- Анимация изменения цвета прямоугольника -->
+            <rect x="750" y="50" width="50" height="50" fill="green">
+              <animate attributeName="fill" values="green;red;blue;green" dur="3s" repeatCount="indefinite"/>
+            </rect>
+            
+            <!-- Анимация масштабирования круга -->
+            <circle cx="140" cy="160" r="20" fill="orange">
+              <animate attributeName="r" values="30;10;30" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            
+            <!-- SVG-маска -->
+            <svg width="300" height="300">
+              <!-- SVG-маска -->
+              <mask id="mask" x="0" y="0" width="100%" height="100%">
+                <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+                <circle cx="150" cy="150" r="100" fill="black"/>
+              </mask>
+              
+              <!-- Применение маски к прямоугольнику -->
+              <rect x="0" y="0" width="100%" height="100%" mask="url(#mask)"/>
+            </svg>    
+</body>
+</html>

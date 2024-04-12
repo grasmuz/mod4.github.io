@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13_2</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        font-size: 26px;
+        color:azure;
+    }
+
+    #container {
+        background-color:black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #text {
+        margin: 10px;
+        position: relative;
+    }
+
+    .highlight {
+        display: inline-block;
+        position: relative;
+    }
+
+    .highlight:hover img {
+        display: inline-block;
+    }
+
+    .highlight img {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100px;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <div id="text">
+        <p>Такие животные как коты — это замечательное существо. Они - коты, могут быть очень ласковыми и игривыми. Иногда коты могут охотиться на мышей. Неудивительно, ведь это у котов в крови. В домашних условиях, коты часто ловят мышей и принесут их в подарок хозяевам.</p>
+        <p>В заключение, коты в общем и целом будут хорошим спутником по жизни любому человеку ему он разочаровался в противоположном полу, с ними можно провести старость. Так же интересный факт, если хозяин кота умирает, его становится некому кормить, и в большинстве случаев коты как хищники начинают искать еду сами, и не исключено что первым на очереди может стать хозяин.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var word = 'кот';
+
+        $('#text').on('mouseenter', 'p', function(){
+            var text = $(this).text();
+            var newText = text.replace(new RegExp(word, 'g'), '<span class="highlight">' + word + '<img src="img/u0.png" alt="Cat and Mouse"></span>');
+            $(this).html(newText);
+        });
+    });
+</script>
+</body>
+</html>
